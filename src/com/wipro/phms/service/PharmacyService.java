@@ -36,10 +36,19 @@ public class PharmacyService {
 		
 	}
 	public void printPurchaseHistory(String customerId){
-		for( Purchase p : customer) {
+		for( Purchase p : purchase) {
+			System.out.print("Purchase details : ");
+			boolean found = false ;
 			if(p.getCustomerId().equalsIgnoreCase(customerId)){
-
+                found = true ;
+				System.out.print("PurchaseId:"+p.getpurchaseId());
+				System.out.print("Medicine_name:"+p.getMedicineId());
+				System.out.print("Quantity:"+p.getQuantity());
+				System.out.print("TotalAmount :"+p.getTotalAmount());
 			}
+		}
+		if (!found) {
+			System.out.println("No purchases found for this customer.");
 		}
 	}
 
